@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     console.log(formData);
     alert("Login Successful!");
-    navigate("/"); // redirect to home
+    navigate("/");
   };
 
   return (
