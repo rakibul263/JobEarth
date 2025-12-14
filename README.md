@@ -28,31 +28,26 @@ This project is designed with scalability and clean code in mind. Each page has 
 
 ## 📁 Folder Structure (Page-Based)
 
-```bash
-src/
-│
-├── assets/          # Images, icons, logos
-│
-├── pages/           # Page-based structure
-│   ├── Home/
-│   │   └── Home.jsx
-│   ├── Jobs/
-│   │   └── Jobs.jsx
-│   ├── Login/
-│   │   └── Login.jsx
-│   ├── Register/
-│   │   └── Register.jsx
-│   └── Dashboard/
-│       └── Dashboard.jsx
-│
-├── components/      # Reusable components (Navbar, Footer, etc.)
-│
-├── routes/          # React Router configuration
-│   └── Router.jsx
-│
-├── App.jsx
-├── main.jsx
-└── index.css
+```
+└── 📁src
+    └── 📁assets
+        ├── logo.png
+        ├── react.svg
+    └── 📁layouts
+        ├── RootLayouts.jsx
+    └── 📁pages
+        └── 📁Home
+            ├── Home.jsx
+        └── 📁shared
+            ├── Footer.jsx
+            ├── Navbar.jsx
+    └── 📁router
+        ├── Router.jsx
+    ├── App.css
+    ├── App.jsx
+    ├── index.css
+    ├── main.jsx
+    └── README.md
 ```
 
 ---
