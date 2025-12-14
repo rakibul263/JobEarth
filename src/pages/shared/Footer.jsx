@@ -44,7 +44,9 @@ const Footer = () => {
       <div className="border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>© {new Date().getFullYear()} JobEarch. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Made with ❤️ for job seekers</p>
+          <p className="mt-2 md:mt-0">
+            Creator <span className="text-[#35a3a7]">Md Rakibul Hasan</span>
+          </p>
         </div>
       </div>
     </footer>

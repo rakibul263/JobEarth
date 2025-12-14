@@ -19,8 +19,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src={logo} alt="JobEarth Logo" className="h-9 w-auto" />
-            <span className="text-xl font-bold text-green-600">JobEarth</span>
+            <img src={logo} alt="JobEarth Logo" className="h-20 w-auto" />
           </div>
           <ul className="hidden md:flex items-center gap-6">
             {links.map((link) => (
@@ -29,8 +28,8 @@ const Navbar = () => {
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-green-600 font-semibold"
-                      : "text-gray-600 hover:text-green-600 transition"
+                      ? "text-[#35A3A7] font-semibold"
+                      : "text-gray-600 hover:text-[#35A3A7] transition"
                   }
                 >
                   {link.name}
@@ -43,7 +42,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <NavLink
               to="/login"
-              className="relative overflow-hidden px-5 py-2 font-semibold rounded-full border border-green-600 text-green-600 group hover:bg-green-600 hover:text-white"
+              className="relative overflow-hidden px-5 py-2 font-semibold rounded-full border border-[#35A3A7] text-[#35A3A7] group hover:bg-[#35A3A7] hover:text-white"
             >
               Login
             </NavLink>

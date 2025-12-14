@@ -1,16 +1,114 @@
-# React + Vite
+# 🌍 JobEarth
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JobEarth is a modern, responsive **Job Portal website** built using **React** and modern frontend technologies. The goal of JobEarth is to connect job seekers and employers through a clean, fast, and user-friendly interface.
 
-Currently, two official plugins are available:
+![JobEarth Logo](https://i.ibb.co.com/Mkt5VsSj/b08c6f07-b8d4-4cfb-a96c-723e682df8f5.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Project Name:** JobEarth
+**Type:** Job Portal Website
+**Structure:** Page-based folder structure
 
-## Expanding the ESLint configuration
+This project is designed with scalability and clean code in mind. Each page has its own folder, making the project easy to maintain and extend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies Used
+
+- **JavaScript (ES6+)**
+- **React** – Component-based UI development
+- **React Router** – Client-side routing
+- **Tailwind CSS** – Utility-first CSS framework
+- **DaisyUI** – Tailwind-based UI components
+
+---
+
+## 📁 Folder Structure (Page-Based)
+
+```bash
+src/
+│
+├── assets/          # Images, icons, logos
+│
+├── pages/           # Page-based structure
+│   ├── Home/
+│   │   └── Home.jsx
+│   ├── Jobs/
+│   │   └── Jobs.jsx
+│   ├── Login/
+│   │   └── Login.jsx
+│   ├── Register/
+│   │   └── Register.jsx
+│   └── Dashboard/
+│       └── Dashboard.jsx
+│
+├── components/      # Reusable components (Navbar, Footer, etc.)
+│
+├── routes/          # React Router configuration
+│   └── Router.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## ✨ Key Features
+
+- 🔐 User Authentication (Login / Register)
+- 🧭 Smooth navigation using React Router
+- 📱 Fully responsive design
+- 🎨 Clean UI with Tailwind CSS & DaisyUI
+- 🧩 Reusable components
+- 📂 Well-organized page-based folder structure
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/jobearth.git
+
+# Go to project directory
+cd jobearth
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
+```
+
+---
+
+## 📌 Future Improvements
+
+- Employer dashboard
+- Job posting system
+- Advanced job filtering
+- User profile management
+- Backend integration
+
+---
+
+## 🙌 Author
+
+**Md Rakibul Hasan**
+Frontend Developer | React Enthusiast
+
+---
+
+## ⭐ Support
+
+If you like this project, please give it a ⭐ on GitHub!
+
+---
+
+> _JobEarth – Connecting Opportunities with Talent_ 🌱
