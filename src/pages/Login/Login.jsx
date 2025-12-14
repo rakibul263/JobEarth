@@ -25,7 +25,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 max-w-[80%] mx-auto rounded-2xl">
       <div className="max-w-6xl w-full bg-white shadow-xl rounded-2xl grid grid-cols-1 md:grid-cols-2 overflow-hidden">
         {/* Lottie Animation */}
-        <div className="hidden md:flex items-center justify-center bg-[#35A3A7]">
+        <div className="hidden md:flex items-center justify-center">
           <Lottie
             animationData={loginAnimation}
             loop={true}
