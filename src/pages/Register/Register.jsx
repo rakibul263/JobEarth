@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useNavigate, Link } from "react-router";
 import Lottie from "lottie-react";
 import registerAnimation from "../../assets/register.json";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Register = () => {
   const navigate = useNavigate();
+  const { createUser } = use(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +15,13 @@ const Register = () => {
     const formObj = Object.fromEntries(formData.entries());
     const { email, password, ...restData } = formObj;
 
-    console.log(email, password);
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     form.reset();
   };

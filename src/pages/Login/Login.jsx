@@ -1,24 +1,26 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useNavigate, Link } from "react-router";
 import Lottie from "lottie-react";
-import loginAnimation from "../../assets/login.json"; // তোমার Lottie JSON path
+import loginAnimation from "../../assets/login.json";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const { signInUser } = use(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Login Successful!");
-    navigate("/");
+    const form = e.target;
+    const formData = new FormData(form);
+    const formObj = Object.fromEntries(formData.entries());
+    const { email, password, ...restData } = formObj;
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -43,8 +45,6 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 placeholder="Enter your email"
                 required
                 className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#35A3A7]"
@@ -56,8 +56,6 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                value={formData.password}
-                onChange={handleChange}
                 placeholder="Enter your password"
                 required
                 className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#35A3A7]"
