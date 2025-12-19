@@ -5,60 +5,71 @@ import team2 from "../../assets/job_team.jpg";
 
 const Banner = () => {
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="flex-1">
+    <div className="hero min-h-screen ">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-12">
+        <div className="flex-1 relative flex justify-center">
           <motion.img
             animate={{
-              y: [100, 150, 100],
-              transition: { duration: 5, repeat: Infinity },
+              y: [-100, -200, -100],
             }}
+            transition={{ duration: 6, repeat: Infinity }}
             src={team2}
-            className="max-w-sm rounded-t-[40px] rounded-br-[40px] border-s-[#35A3A7] border-b-[#35A3A7] border-s-7 border-b-7 shadow-2xl"
+            className="w-72 rounded-t-[40px] rounded-br-[40px] border-l-8 border-b-8 border-[#35A3A7] shadow-2xl"
           />
+
           <motion.img
             animate={{
-              x: [150, 300, 150],
-              transition: { duration: 10, repeat: Infinity },
+              y: [100, 100, 100],
+              x: [300, 400, 300],
             }}
+            transition={{ duration: 8, repeat: Infinity }}
             src={team1}
-            className="max-w-sm rounded-t-[40px] rounded-br-[40px] border-s-[#35A3A7] border-b-[#35A3A7] border-s-7 border-b-7 shadow-2xl"
+            className="w-72 absolute -bottom-16 -left-10 rounded-t-[40px] rounded-br-[40px] border-l-8 border-b-8 border-[#35A3A7] shadow-2xl"
           />
         </div>
+
         <div className="flex-1">
           <motion.h1
-            animate={{
-              // x: 200,
-              y: -50,
-              color: ["#ff5731", "#33ff33", "#8a33fa"],
-              transition: { duration: 4 },
-            }}
-            className="text-5xl font-bold"
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-5xl font-bold leading-tight"
           >
-            Latest Job For You!
-          </motion.h1>
-          <motion.h1
-            initial={{ scale: 0 }}
-            animate={{ scale: 1, transition: { duration: 4 } }}
-            className="text-5xl font-bold"
-          >
-            Remote{" "}
+            Find Your{" "}
             <motion.span
               animate={{
-                color: ["#ff5731", "#33ff33", "#8a33fa"],
-                transition: { duration: 5, repeat: Infinity },
+                color: ["#9DAAFE", "#BFCAFF", "#2F8F91"],
               }}
+              transition={{ duration: 5, repeat: Infinity }}
             >
-              Jobs
-            </motion.span>{" "}
-            For You!
+              Dream Job
+            </motion.span>
           </motion.h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+
+          <p className="py-6 text-gray-600">
+            Discover thousands of remote & on-site jobs from top companies.
+            Apply easily, get hired faster, and build your career with us.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+
+          <div className="flex gap-4">
+            <button className="btn bg-[#35A3A7] text-white">Browse Jobs</button>
+            <button className="btn btn-outline">Post a Job</button>
+          </div>
+
+          <div className="mt-10 grid grid-cols-3 gap-6 text-center">
+            <div>
+              <h2 className="text-3xl font-bold text-primary">10K+</h2>
+              <p className="text-sm text-gray-500">Jobs Posted</p>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-primary">5K+</h2>
+              <p className="text-sm text-gray-500">Companies</p>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-primary">20K+</h2>
+              <p className="text-sm text-gray-500">Candidates</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
