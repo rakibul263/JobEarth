@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { NavLink } from "react-router";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { user, signOutUser } = use(AuthContext);
+
+  const handleSignout = () => {
+    signOutUser();
+  };
 
   const links = (
     <>
@@ -120,12 +127,21 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <NavLink
-            to="/register"
-            className="btn bg-[#35A3A7] hover:bg-[#2e8f91] text-white rounded-2xl px-5"
-          >
-            Register
-          </NavLink>
+          {user ? (
+            <NavLink
+              onClick={handleSignout}
+              className="btn bg-[#35A3A7] hover:bg-[#2e8f91] text-white rounded-2xl px-5"
+            >
+              SignOut
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/register"
+              className="btn bg-[#35A3A7] hover:bg-[#2e8f91] text-white rounded-2xl px-5"
+            >
+              Register
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

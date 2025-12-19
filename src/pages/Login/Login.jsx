@@ -3,9 +3,11 @@ import { useNavigate, Link } from "react-router";
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/login.json";
 import { AuthContext } from "../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { signInUser } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +18,11 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result);
+        toast.success("Login Successful.");
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.message);
       });
   };
 
