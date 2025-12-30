@@ -117,9 +117,12 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Logo */}
-          <NavLink to="/" className="btn btn-ghost normal-case text-xl">
-            <img src={logo} alt="JobEarth Logo" className="h-20 w-auto" />
+          <NavLink to="/" className=" normal-case text-xl">
+            <img
+              src={logo}
+              alt="JobEarth Logo"
+              className="h-10 w-auto bg-cover"
+            />
           </NavLink>
         </div>
 
