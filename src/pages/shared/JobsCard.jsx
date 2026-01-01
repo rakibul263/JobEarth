@@ -7,17 +7,10 @@ const JobsCard = ({ job }) => {
     _id,
     title,
     location,
-    jobType,
-    category,
-    applicationDeadline,
     salaryRange,
     description,
     company,
     requirements,
-    responsibilities,
-    status,
-    hr_email,
-    hr_name,
     company_logo,
   } = job;
   return (
@@ -51,7 +44,7 @@ const JobsCard = ({ job }) => {
         <div className="card-actions justify-end">
           <Link to={`/jobs/${_id}`}>
             <button className="btn bg-[#2F8F91] text-white font-bold rounded-2xl mt-3">
-              Apply Now
+              Job Details
             </button>
           </Link>
         </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import { Link } from "react-router";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
 
   const {
+    _id,
     title,
     location,
     jobType,
@@ -28,7 +30,6 @@ const JobDetails = () => {
   return (
     <div className="min-h-screen bg-[#f5fafa] py-10 px-4">
       <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8">
-        {/* ================= Header ================= */}
         <div className="flex flex-col md:flex-row gap-6 items-center md:items-start border-b pb-6">
           <img
             src={company_logo}
@@ -81,9 +82,11 @@ const JobDetails = () => {
           </p>
         </Section>
         <div className="text-center mt-10">
-          <button className="bg-[#2f8f91] hover:bg-[#257678] text-white px-10 py-3 rounded-lg font-semibold transition">
-            Apply Now
-          </button>
+          <Link to={`/JobApply/${_id}`}>
+            <button className="bg-[#2f8f91] hover:bg-[#257678] text-white px-10 py-3 rounded-lg font-semibold transition">
+              Apply Now
+            </button>
+          </Link>
         </div>
       </div>
     </div>

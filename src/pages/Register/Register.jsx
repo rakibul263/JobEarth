@@ -13,11 +13,14 @@ const Register = () => {
     const form = e.target;
     const formData = new FormData(form);
     const formObj = Object.fromEntries(formData.entries());
-    const { email, password, ...restData } = formObj;
+    const { name, email, password, ...restData } = formObj;
 
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        return updateProfile(result.user, {
+          displayName: name,
+        }).then(() => {});
       })
       .catch((error) => {
         console.log(error);
