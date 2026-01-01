@@ -79,6 +79,21 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/myApplications"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#35A3A7] font-semibold"
+                : "text-gray-700 hover:text-[#35A3A7] transition-colors"
+            }
+          >
+            MyApplications
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
