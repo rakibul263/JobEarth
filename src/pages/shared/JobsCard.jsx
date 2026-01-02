@@ -35,7 +35,6 @@ const JobsCard = ({ job }) => {
         </div>
       </div>
 
-      {/* Body */}
       <div className="card-body">
         <h2 className="card-title text-lg sm:text-xl">{title}</h2>
 
