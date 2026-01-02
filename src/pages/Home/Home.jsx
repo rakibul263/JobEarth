@@ -6,10 +6,18 @@ const Home = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("https://job-earth-server.vercel.app/jobs")
-      .then((res) => res.json())
+    fetch("http://localhost:3000/jobs")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to fetch jobs: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => setJobs(data))
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error("Error fetching jobs:", err);
+        setJobs([]); // Set empty array on error
+      });
   }, []);
 
   return (

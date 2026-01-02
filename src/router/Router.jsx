@@ -31,8 +31,19 @@ const router = createBrowserRouter([
       {
         path: "jobs/:id",
         Component: JobDetails,
-        loader: ({ params }) =>
-          fetch(`https://job-earth-server.vercel.app/jobs/${params.id}`),
+        loader: async ({ params }) => {
+          try {
+            const response = await fetch(
+              `http://localhost:3000/jobs/${params.id}`
+            );
+            if (!response.ok) {
+              throw new Response("Job not found", { status: response.status });
+            }
+            return response.json();
+          } catch (error) {
+            throw new Response("Failed to load job", { status: 500 });
+          }
+        },
       },
       {
         path: "contact",
