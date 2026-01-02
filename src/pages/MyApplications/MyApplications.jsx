@@ -6,7 +6,7 @@ const MyApplications = () => {
   const [applications, setApplications] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/applications")
+    fetch("https://job-earth-server.vercel.app/applications")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch applications");
         return res.json();
