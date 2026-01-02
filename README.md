@@ -8,8 +8,7 @@ JobEarth is a modern, responsive **Job Portal website** built using **React** an
 
 ## 🌐 Server Link
 
-👉 [Live Server Site](https://job-earth-server.vercel.app/)
-
+👉 [Live Server Site](http://localhost:3000/)
 
 ![JobEarth Logo](https://i.ibb.co.com/Mkt5VsSj/b08c6f07-b8d4-4cfb-a96c-723e682df8f5.png)
 

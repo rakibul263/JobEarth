@@ -10,6 +10,7 @@ import JobApply from "../pages/JobApply/JobApply";
 import MyApplications from "../pages/MyApplications/MyApplications";
 import ContactPage from "../pages/Contact/ContactPage";
 import AboutPage from "../pages/About/AboutPage";
+import AddJob from "../pages/AddJob/AddJob";
 
 const router = createBrowserRouter([
   {
@@ -29,12 +30,20 @@ const router = createBrowserRouter([
         Component: Login,
       },
       {
+        path: "addJob",
+        element: (
+          <PrivateRoute>
+            <AddJob></AddJob>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "jobs/:id",
         Component: JobDetails,
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `https://job-earth-server.vercel.app/jobs/${params.id}`
+              `http://localhost:3000/jobs/${params.id}`
             );
             if (!response.ok) {
               throw new Response("Job not found", { status: response.status });

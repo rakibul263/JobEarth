@@ -20,7 +20,7 @@ const JobApply = () => {
     };
 
     axios
-      .post("https://job-earth-server.vercel.app/applications", application)
+      .post("http://localhost:3000/applications", application)
       .then(() => toast.success("Submit Successful"))
       .catch((err) => toast.error("Something is wrong."));
   };

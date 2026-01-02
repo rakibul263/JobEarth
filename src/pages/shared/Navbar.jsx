@@ -79,6 +79,7 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+      {/* for applicant */}
       {user && (
         <li>
           <NavLink
@@ -91,6 +92,23 @@ const Navbar = () => {
             }
           >
             MyApplications
+          </NavLink>
+        </li>
+      )}
+
+      {/* for recruiter */}
+      {user && (
+        <li>
+          <NavLink
+            to="/addJob"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#35A3A7] font-semibold"
+                : "text-gray-700 hover:text-[#35A3A7] transition-colors"
+            }
+          >
+            Add Job
           </NavLink>
         </li>
       )}
