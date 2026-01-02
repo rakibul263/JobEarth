@@ -1,7 +1,11 @@
 import React from "react";
 import "./AddJob.css";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { Navigate, useNavigate } from "react-router";
 
 const AddJob = () => {
+  const navigator = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -27,7 +31,17 @@ const AddJob = () => {
       status: "active",
     };
 
-    console.log(jobData);
+    axios
+      .post("http://localhost:3000/jobs", jobData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          toast.success("Data Added Successfully.");
+          navigator("/");
+        }
+      })
+      .catch((error) => {
+        toast.error("Something is Wrong.");
+      });
   };
 
   return (
