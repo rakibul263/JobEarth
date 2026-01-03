@@ -24,7 +24,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#EAF6F6] via-[#FDFEFE] to-[#DFF5F4] flex flex-col items-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#EAF6F6] via-[#FDFEFE] to-[#DFF5F4] flex flex-col items-center p-8 max-w-[80%] mx-auto rounded-3xl">
       <h1
         className="text-4xl font-bold mb-6 text-center"
         style={{ color: "#2f8f91" }}

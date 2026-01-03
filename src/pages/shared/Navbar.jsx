@@ -112,6 +112,21 @@ const Navbar = () => {
           </NavLink>
         </li>
       )}
+      {user && (
+        <li>
+          <NavLink
+            to="/myPostedJob"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#35A3A7] font-semibold"
+                : "text-gray-700 hover:text-[#35A3A7] transition-colors"
+            }
+          >
+            MyPostedJob
+          </NavLink>
+        </li>
+      )}
     </>
   );
 

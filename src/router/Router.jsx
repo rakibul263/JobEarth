@@ -11,6 +11,8 @@ import MyApplications from "../pages/MyApplications/MyApplications";
 import ContactPage from "../pages/Contact/ContactPage";
 import AboutPage from "../pages/About/AboutPage";
 import AddJob from "../pages/AddJob/AddJob";
+import { MdYard } from "react-icons/md";
+import MyPostedJob from "../pages/MyPostedJob/MyPostedJob";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddJob></AddJob>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "myPostedJob",
+        element: (
+          <PrivateRoute>
+            <MyPostedJob></MyPostedJob>
           </PrivateRoute>
         ),
       },

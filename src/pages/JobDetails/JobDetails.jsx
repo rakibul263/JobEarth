@@ -28,8 +28,8 @@ const JobDetails = () => {
     : "Not disclosed";
 
   return (
-    <div className="min-h-screen bg-[#f5fafa] py-10 px-4">
-      <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8">
+    <div className="min-h-screen  py-10 px-4 bg-gradient-to-br from-[#EAF6F6] via-[#FDFEFE] to-[#DFF5F4] max-w-[80%] mx-auto rounded-4xl">
+      <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-2xl p-8">
         <div className="flex flex-col md:flex-row gap-6 items-center md:items-start border-b pb-6">
           <img
             src={company_logo}

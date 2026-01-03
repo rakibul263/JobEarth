@@ -3,9 +3,12 @@ import "./AddJob.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router";
+import UseAuth from "../../hooks/UseAuth";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const AddJob = () => {
   const navigator = useNavigate();
+  const { user } = UseAuth(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -143,7 +146,8 @@ const AddJob = () => {
             type="email"
             name="hrEmail"
             placeholder="HR Email"
-            className="input-field"
+            className="input-field disabled"
+            value={user.email}
           />
 
           <input
