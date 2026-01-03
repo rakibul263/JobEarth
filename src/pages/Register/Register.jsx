@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { useNavigate, Link } from "react-router";
+import { useNavigate, Link, useNavigation } from "react-router";
 import Lottie from "lottie-react";
 import registerAnimation from "../../assets/register.json";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -17,6 +17,7 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
+        navigate("/");
         console.log(result.user);
         return updateProfile(result.user, {
           displayName: name,
