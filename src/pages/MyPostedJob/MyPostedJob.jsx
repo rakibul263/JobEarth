@@ -7,7 +7,7 @@ const MyPostedJob = () => {
   // const { user } = UseAuth();
 
   // useEffect(() => {
-  //   fetch("http://localhost:3000/jobs")
+  //   fetch("https://job-earth-server.vercel.app/jobs")
   //     .then((res) => res.json())
   //     .then((data) => setMyPost(data));
   // }, []);

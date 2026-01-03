@@ -6,7 +6,7 @@ const Home = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/jobs")
+    fetch("https://job-earth-server.vercel.app/jobs")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to fetch jobs: ${res.status}`);

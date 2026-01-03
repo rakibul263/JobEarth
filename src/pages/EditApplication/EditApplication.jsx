@@ -10,7 +10,7 @@ const EditApplication = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/applications/${id}`)
+    fetch(`https://job-earth-server.vercel.app/applications/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setApplication(data);
@@ -37,7 +37,7 @@ const EditApplication = () => {
       text: e.target.text.value,
     };
 
-    fetch(`http://localhost:3000/applications/${id}`, {
+    fetch(`https://job-earth-server.vercel.app/applications/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedApplication),
