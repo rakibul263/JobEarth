@@ -52,7 +52,7 @@ const JobList = ({ jobsCreatedByPromise }) => {
               {job.description}
             </div>
 
-            <div className="px-5 pb-4 flex flex-wrap gap-2">
+            <div className="px-5 pb-4 flex flex-wrap gap-2 pt-3">
               {job.requirements.map((skill, index) => (
                 <span
                   key={index}
@@ -65,12 +65,12 @@ const JobList = ({ jobsCreatedByPromise }) => {
 
             <div className="px-5 py-4 border-t flex justify-between items-center">
               <span className="text-xs text-gray-500">HR: {job.hr_name}</span>
-              <Link to={`/jobs/${job._id}`}>
+              {/* <Link to={`/myPostedJob/${job._id}`}>
                 {" "}
                 <button className="px-4 py-2 text-sm rounded-lg bg-[#2f8f91] text-white hover:bg-[#257b7d] transition">
-                  View Details
+                  Edit Job
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         ))}

@@ -7,12 +7,13 @@ import Error from "../pages/Error/Error";
 import JobDetails from "../pages/JobDetails/JobDetails";
 import PrivateRoute from "../routes/PrivateRoute";
 import JobApply from "../pages/JobApply/JobApply";
-import MyApplications from "../pages/MyApplications/MyApplications";
 import ContactPage from "../pages/Contact/ContactPage";
 import AboutPage from "../pages/About/AboutPage";
 import AddJob from "../pages/AddJob/AddJob";
 import { MdYard } from "react-icons/md";
 import MyPostedJob from "../pages/MyPostedJob/MyPostedJob";
+import MyApplicationsPage from "../pages/MyApplications/MyApplicationsPage";
+import EditApplication from "../pages/EditApplication/EditApplication";
 
 const router = createBrowserRouter([
   {
@@ -81,10 +82,19 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "applications/:id",
+        element: (
+          <PrivateRoute>
+            <EditApplication></EditApplication>
+          </PrivateRoute>
+        ),
+      },
+
+      {
         path: "myApplications",
         element: (
           <PrivateRoute>
-            <MyApplications></MyApplications>
+            <MyApplicationsPage></MyApplicationsPage>
           </PrivateRoute>
         ),
       },

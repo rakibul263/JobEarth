@@ -27,19 +27,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/jobs"
-          onClick={() => setMenuOpen(false)}
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#35A3A7] font-semibold"
-              : "text-gray-700 hover:text-[#35A3A7] transition-colors"
-          }
-        >
-          Jobs
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           to="/companies"
