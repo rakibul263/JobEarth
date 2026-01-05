@@ -35,15 +35,11 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const userData = { email: currentUser.email };
         axios
-          .post("http://localhost:3000/jwt", userData)
-          .then((res) => {
-            console.log("Token After Create", res.data);
-            const token = res.data.token;
-            localStorage.setItem("token", token);
+          .post("http://localhost:3000/jwt", userData, {
+            withCredentials: true,
           })
-          .catch((error) => {
-            console.log("Error is ", error);
-          });
+          .then((res) => console.log(res.data))
+          .catch((error) => console.log(error));
       }
     });
     return () => unSubscribe();
